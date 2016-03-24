@@ -6,24 +6,24 @@
 
 module.exports = {
   addition: function(a,b) {
-    a + b;
+    return a + b;
   },
 
   matches: function(first, second) {
     var result;
 
-    if (first = second) {
-      result = true;
-    } else {
+    if (first != second) {
       result = false;
+    } else {
+      result = true;
     }
 
     return result;
   },
 
   fizzBuzz: function(number) {
-    var divisibleByThree = number % 3,
-        divisibleByFive = number % 5,
+    var divisibleByThree = number % 3 === 0,
+        divisibleByFive = number % 5 === 0,
         output = number;
 
     if (divisibleByThree && divisibleByFive) {
@@ -43,8 +43,10 @@ module.exports = {
     switch (word) {
       case 'foo':
         output = 'bar';
+        break;
       case 'nope':
         output = 'yup';
+        break;
       default:
         output = 'never output anything. ever!'
     };
